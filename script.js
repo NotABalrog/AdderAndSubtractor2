@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     $("#add").click(function () {
         var operator = "+";
-
         Calculate(operator);
     });
     $("#subtract").click(function () {
@@ -46,7 +45,7 @@ $(document).ready(function () {
 
     function Validate(x, y) {
 
-        var numericReg = /^\d*[0-9](|.\d*[0-9]|,\d*[0-9])?$/;
+        var numericReg = /^-?\d*\.{0,1}\d+$/;
 
         if ((!numericReg.test(x)) || !numericReg.test(y)) {
             return false;
@@ -55,4 +54,5 @@ $(document).ready(function () {
             return true;
         }
     };
-});
+}); 
+
