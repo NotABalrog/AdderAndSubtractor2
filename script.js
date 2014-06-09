@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     $("#add").click(function () {
         var operator = "+";
+
         Calculate(operator);
     });
     $("#subtract").click(function () {
@@ -39,7 +40,7 @@ $(document).ready(function () {
         }
 
         else {
-            $('h4').text("Please enter a number without spaces");
+            $('h4').text("Please enter a number without spaces or special characters");
         }
     };
 
