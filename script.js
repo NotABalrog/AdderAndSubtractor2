@@ -1,6 +1,8 @@
 $(document).ready(function () {
+
     $("#add").click(function () {
         var operator = "+";
+ 
         Calculate(operator);
     });
     $("#subtract").click(function () {
@@ -12,9 +14,9 @@ $(document).ready(function () {
 
         var total = 0;
 
-        //grab needed values from dom
-        var x = parseInt($('#inputX').val());
-        var y =  parseInt($('#inputY').val());
+        //grab needed values from dom and remove spaces
+        var x = parseFloat($('#inputX').val().replace(/\s/g, ""));
+        var y = parseFloat($('#inputY').val().replace(/\s/g, ""));
         
         //validate
         var valid = Validate(x, y);
@@ -43,7 +45,10 @@ $(document).ready(function () {
     };
 
     function Validate(x, y) {
-        if (isNaN(x) || isNaN(y)) {     
+
+        var numericReg = /^\d*[0-9](|.\d*[0-9]|,\d*[0-9])?$/;
+
+        if ((!numericReg.test(x)) || !numericReg.test(y)) {
             return false;
         }
         else {
