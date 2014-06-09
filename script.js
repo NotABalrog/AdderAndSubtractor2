@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     $("#add").click(function () {
         var operator = "+";
- 
         Calculate(operator);
     });
     $("#subtract").click(function () {
